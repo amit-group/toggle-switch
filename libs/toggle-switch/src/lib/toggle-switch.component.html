@@ -1,0 +1,6 @@
+<ng-container *ngIf="formControlName">
+  <input type="checkbox" [formControl]="control" />
+</ng-container>
+<ng-container *ngIf="!formControlName">
+  <input type="checkbox" [value]="value" (change)="onInputChange($event)" />
+</ng-container>

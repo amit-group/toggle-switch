@@ -1,0 +1,6 @@
+/*
+ * Public API Surface of toggle-switch
+ */
+export * from './lib/toggle-switch.component';
+export * from './lib/toggle-switch.module';
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoicHVibGljLWFwaS5qcyIsInNvdXJjZVJvb3QiOiIiLCJzb3VyY2VzIjpbIi4uLy4uLy4uLy4uL2xpYnMvdG9nZ2xlLXN3aXRjaC9zcmMvcHVibGljLWFwaS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQTs7R0FFRztBQUVILGNBQWMsK0JBQStCLENBQUM7QUFDOUMsY0FBYyw0QkFBNEIsQ0FBQyIsInNvdXJjZXNDb250ZW50IjpbIi8qXG4gKiBQdWJsaWMgQVBJIFN1cmZhY2Ugb2YgdG9nZ2xlLXN3aXRjaFxuICovXG5cbmV4cG9ydCAqIGZyb20gJy4vbGliL3RvZ2dsZS1zd2l0Y2guY29tcG9uZW50JztcbmV4cG9ydCAqIGZyb20gJy4vbGliL3RvZ2dsZS1zd2l0Y2gubW9kdWxlJztcbiJdfQ==
