@@ -1,9 +1,15 @@
 {
   "name": "@amitgroup/toggle-switch",
-  "version": "0.0.1",
+  "version": "0.0.0",
+  "license": "ISC",
+  "private": false,
+  "repository": {
+    "url": "https://github.com/amit-group/toggle-switch"
+  },
+  "homepage": "https://github.com/amit-group/toggle-switch#readme",
   "peerDependencies": {
-    "@angular/common": "^13.2.0",
-    "@angular/core": "^13.2.0"
+    "@angular/common": "^11.0.0",
+    "@angular/core": "^11.0.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"

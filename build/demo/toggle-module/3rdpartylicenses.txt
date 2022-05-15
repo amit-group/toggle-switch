@@ -1,4 +1,5 @@
 @amitgroup/toggle-switch
+ISC
 
 @angular/common
 MIT
