@@ -18,7 +18,7 @@
   <tr>
     <td>NgModel Control</td>
     <td>
-      <am-toggle-switch [(ngModel)]="test" (ngModelChange)="onInputChange($event)"></am-toggle-switch>
+      <am-toggle-switch [(ngModel)]="test" (ngModelChange)="onInputChange($event)" [disable]="true"></am-toggle-switch>
     </td>
     <td>
       {{test}}

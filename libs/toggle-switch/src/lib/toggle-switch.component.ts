@@ -1,5 +1,19 @@
-import { ControlValueAccessor, NG_VALUE_ACCESSOR, AbstractControl, FormControl, NgControl, ControlContainer } from '@angular/forms';
-import { Component, forwardRef, Input, OnInit, Optional, Self } from '@angular/core';
+import {
+  ControlValueAccessor,
+  NG_VALUE_ACCESSOR,
+  FormControl,
+  ControlContainer,
+} from '@angular/forms';
+import {
+  Component,
+  forwardRef,
+  Inject,
+  Input,
+  OnInit,
+  Optional,
+} from '@angular/core';
+import { IToggleSwitchConfig } from './interfaces/toggle-switch-config';
+import { AM_TOGGLE_SWITCH_CONFIG } from './injections/toggle-switch-config';
 
 @Component({
   selector: 'am-toggle-switch',
@@ -9,19 +23,20 @@ import { Component, forwardRef, Input, OnInit, Optional, Self } from '@angular/c
     {
       provide: NG_VALUE_ACCESSOR,
       useExisting: forwardRef(() => ToggleSwitchComponent),
-      multi: true
-    }
-  ]
+      multi: true,
+    },
+  ],
 })
 export class ToggleSwitchComponent implements OnInit, ControlValueAccessor {
   @Input() formControlName!: string;
+  @Input() disable: boolean = false;
   control!: FormControl;
   private _value: any;
-  
-  onChange = (_: any) => { };
-  onTouched = () => { };
 
-  public get value(){
+  onChange = (_: any) => {};
+  onTouched = () => {};
+
+  public get value() {
     return this._value;
   }
 
@@ -31,19 +46,35 @@ export class ToggleSwitchComponent implements OnInit, ControlValueAccessor {
       this.onChange(v);
     }
   }
-  
+
   constructor(
-    @Optional() private controlContainer: ControlContainer
-  ) {
-    
-  }
+    @Optional() private controlContainer: ControlContainer,
+    @Inject(AM_TOGGLE_SWITCH_CONFIG) public config: IToggleSwitchConfig
+  ) {}
 
   ngOnInit(): void {
-    console.log(this.formControlName);
-    if(this.controlContainer && !!this.formControlName) {
-      this.control = this.controlContainer.control?.get(this.formControlName) as FormControl;
-      console.log(this.control);
+    if (this.controlContainer && !!this.formControlName) {
+      this.control = this.controlContainer.control?.get(
+        this.formControlName
+      ) as FormControl;
     }
+
+    this.initDocumentVariables();
+  }
+
+  initDocumentVariables() {
+    document.documentElement.style.setProperty(
+      '--tw-active-background',
+      this.config.activeColor!
+    );
+    document.documentElement.style.setProperty(
+      '--tw-deactive-background',
+      this.config.deactiveColor!
+    );
+    document.documentElement.style.setProperty(
+      '--tw-deactive-control-background',
+      this.config.deactiveControlColor!
+    );
   }
 
   writeValue(val: any): void {
@@ -59,10 +90,10 @@ export class ToggleSwitchComponent implements OnInit, ControlValueAccessor {
   }
 
   setDisabledState(isDisabled: boolean): void {
-    throw new Error("Method not implemented.");
+    throw new Error('Method not implemented.');
   }
 
-  onInputChange(ev: any){
+  onInputChange(ev: any) {
     this.writeValue(ev.target?.checked);
   }
 }
