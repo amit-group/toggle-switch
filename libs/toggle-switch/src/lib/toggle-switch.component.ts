@@ -64,16 +64,16 @@ export class ToggleSwitchComponent implements OnInit, ControlValueAccessor {
 
   initDocumentVariables() {
     document.documentElement.style.setProperty(
-      '--tw-active-background',
-      this.config.activeColor!
-    );
-    document.documentElement.style.setProperty(
       '--tw-deactive-background',
       this.config.deactiveColor!
     );
     document.documentElement.style.setProperty(
       '--tw-deactive-control-background',
       this.config.deactiveControlColor!
+    );
+    document.documentElement.style.setProperty(
+      '--tw-active-background',
+      this.config.activeColor!
     );
   }
 

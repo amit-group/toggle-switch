@@ -2,23 +2,46 @@
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.0.
 
-## Code scaffolding
+## How to use
+### Step 1
+Import ToggleSwitchModule to AppModule
+```javascript
+{
+    imports: [
+    ...
+    ToggleSwitchModule
+    ...
+  ]
+}
+```
+or
+```javascript
+{
+  imports: [
+    ...
+    ToggleSwitchModule.forRoot(options)
+    ...
+  ]
+}
+```
+### Step 2
 
-Run `ng generate component component-name --project toggle-switch` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project toggle-switch`.
-> Note: Don't forget to add `--project toggle-switch` or else it will be added to the default project in your `angular.json` file. 
+Add ```am-toggle-switch``` tag in component as HTML tag with 2 options [(ngModel)] or formControlName
 
-## Build
+```html
+<am-toggle-switch [(ngModel)]="test" (ngModelChange)="onInputChange($event)"></am-toggle-switch>
 
-Run `ng build toggle-switch` to build the project. The build artifacts will be stored in the `dist/` directory.
+```
+or
+```html
+<form [formGroup]="formGroup">
+    <am-toggle-switch formControlName="test"></am-toggle-switch>
+</form>
+```
 
-## Publishing
+# Inputs
+| Input           | Type             | Default          |
+| [disabled]      | boolean          | false            |
+| formControlName | formControlName  |                  |
 
-After building your library with `ng build toggle-switch`, go to the dist folder `cd dist/toggle-switch` and run `npm publish`.
 
-## Running unit tests
-
-Run `ng test toggle-switch` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

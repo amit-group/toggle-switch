@@ -15,7 +15,11 @@ import { AppRoutingModule } from './app-routing.module';
     AppRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    ToggleSwitchModule
+    ToggleSwitchModule.forRoot({
+      config: {
+        activeColor: '#3CB792'
+      }
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

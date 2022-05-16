@@ -1,7 +1,7 @@
 <ng-container *ngIf="formControlName">
   <label for="control" class="switch" [ngClass]="{'switch--disabled': disable}">
-    <input type="checkbox" id="control" [formControl]="control" />
-    <span class="slider round"></span>
+      <input type="checkbox" id="control" [formControl]="control" />
+      <span class="slider round"></span>
   </label>
 </ng-container>
 <ng-container *ngIf="!formControlName">

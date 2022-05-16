@@ -1,27 +1,7 @@
-<table border="1">
-  <tr>
-    <th>Type</th>
-    <th>Control</th>
-    <th>Value</th>
-  </tr>
-  <tr>
-    <td>Reactive Form Control</td>
-    <td>
-      <form [formGroup]="formGroup">
-        <am-toggle-switch formControlName="test"></am-toggle-switch>
-      </form>
-    </td>
-    <td>
-      {{formGroup.get('test')?.value}}
-    </td>
-  </tr>
-  <tr>
-    <td>NgModel Control</td>
-    <td>
-      <am-toggle-switch [(ngModel)]="test" (ngModelChange)="onInputChange($event)" [disable]="true"></am-toggle-switch>
-    </td>
-    <td>
-      {{test}}
-    </td>
-  </tr>
-</table>
+<am-toggle-switch
+  [(ngModel)]="test"
+  (ngModelChange)="onInputChange($event)"
+></am-toggle-switch>
+<form [formGroup]="formGroup">
+  <am-toggle-switch formControlName="test"></am-toggle-switch>
+</form>

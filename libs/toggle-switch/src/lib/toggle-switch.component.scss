@@ -16,12 +16,8 @@
 }
 
 .slider {
-  position: absolute;
   cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  position: relative;
   background-color: var(--tw-deactive-background);
   -webkit-transition: 0.4s;
   transition: 0.4s;
@@ -62,6 +58,10 @@ input:checked + .slider {
 
 input:focus + .slider {
   box-shadow: 0 0 1px var(--tw-active-background);
+}
+
+input:focus + .slider {
+  box-shadow: none;
 }
 
 input:checked + .slider::before {
