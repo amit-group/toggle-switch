@@ -41,6 +41,7 @@ or
 
 # Inputs
 | Input           | Type             | Default          |
+| --------------- | ---------------- | ----------------
 | [disabled]      | boolean          | false            |
 | formControlName | formControlName  |                  |
 
