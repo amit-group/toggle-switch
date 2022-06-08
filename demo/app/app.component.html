@@ -2,6 +2,13 @@
   [(ngModel)]="test"
   (ngModelChange)="onInputChange($event)"
 ></am-toggle-switch>
+<br />
+<am-toggle-switch
+  [(ngModel)]="testAdd"
+  (ngModelChange)="onInputChange($event)"
+></am-toggle-switch>
+
+<br />
 <form [formGroup]="formGroup">
   <am-toggle-switch formControlName="test"></am-toggle-switch>
 </form>

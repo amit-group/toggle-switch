@@ -38,8 +38,9 @@ export class ToggleSwitchComponent implements OnInit, ControlValueAccessor {
 
   public get value() {
     return this._value;
+    
   }
-
+ 
   public set value(v: any) {
     if (v !== this._value) {
       this._value = v;

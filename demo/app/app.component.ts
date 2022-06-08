@@ -10,6 +10,7 @@ export class AppComponent implements OnInit {
   title = 'toggle-module';
   formGroup!: FormGroup;
   test: boolean = false;
+  testAdd: boolean = true;
   constructor(){
 
   }
